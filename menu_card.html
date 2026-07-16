@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Card</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .menu-card{
+            width:380px;
+            background:#ffffff;
+            border-radius:15px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+            padding:25px;
+        }
+
+        h1{
+            text-align:center;
+            color:#d35400;
+            margin-bottom:5px;
+        }
+
+        .tagline{
+            text-align:center;
+            color:gray;
+            margin-bottom:20px;
+            font-style:italic;
+        }
+
+        h2{
+            text-align:center;
+            color:#333;
+            margin-bottom:15px;
+        }
+
+        .menu-item{
+            display:flex;
+            justify-content:space-between;
+            padding:12px;
+            margin:8px 0;
+            border-bottom:1px solid #ddd;
+            transition:0.3s;
+        }
+
+        .menu-item:hover{
+            background:#ffe8cc;
+            border-radius:8px;
+        }
+
+        .price{
+            color:#d35400;
+            font-weight:bold;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            margin-top:20px;
+            background:#d35400;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#a84300;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:15px;
+            color:gray;
+            font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="menu-card">
+
+    <h1>🍽 Food Palace</h1>
+    <p class="tagline">Fresh • Delicious • Healthy</p>
+
+    <h2>Today's Menu</h2>
+
+    <div class="menu-item">
+        <span>Veg Biryani</span>
+        <span class="price">₹180</span>
+    </div>
+
+    <div class="menu-item">
+        <span>Chicken Biryani</span>
+        <span class="price">₹250</span>
+    </div>
+
+    <div class="menu-item">
+        <span>Paneer Butter Masala</span>
+        <span class="price">₹220</span>
+    </div>
+
+    <div class="menu-item">
+        <span>Butter Naan</span>
+        <span class="price">₹40</span>
+    </div>
+
+    <div class="menu-item">
+        <span>Cold Coffee</span>
+        <span class="price">₹120</span>
+    </div>
+
+    <div class="menu-item">
+        <span>Chocolate Ice Cream</span>
+        <span class="price">₹90</span>
+    </div>
+
+    <button>Order Now</button>
+
+    <p class="footer">
+        📍 Vijayawada | 📞 +91 9876543210
+    </p>
+
+</div>
+
+</body>
+</html>
