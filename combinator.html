@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Gallery</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eeeeee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .gallery {
+            width: 780px;
+            height: 650px;
+            background-color: #f2e2c7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Child combinator */
+        .gallery > div {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+
+            transform: rotate(45deg);
+            overflow: hidden;
+
+            border: 5px solid #d29b4d;
+        }
+
+        /* Descendant combinator */
+        .gallery div img {
+            width: 270px;
+            height: 270px;
+            object-fit: cover;
+
+            position: absolute;
+            top: -48px;
+            left: -48px;
+
+            transform: rotate(-45deg);
+        }
+
+        /* First image */
+        .box1 {
+            top: 85px;
+            left: 175px;
+        }
+
+        /* Second image */
+        .box2 {
+            top: 85px;
+            right: 70px;
+        }
+
+        /* Center image */
+        .box3 {
+            width: 230px !important;
+            height: 230px !important;
+
+            top: 215px;
+            left: 325px;
+        }
+
+        .box3 img {
+            width: 340px;
+            height: 340px;
+            top: -55px;
+            left: -55px;
+        }
+
+        /* Fourth image */
+        .box4 {
+            bottom: 80px;
+            left: 175px;
+        }
+
+        /* Fifth image */
+        .box5 {
+            bottom: 80px;
+            right: 70px;
+        }
+
+        /* Adjacent sibling combinator */
+        .box1 + .box2 {
+            transform: rotate(45deg) translate(5px, 0);
+        }
+
+        /* General sibling combinator */
+        .box3 ~ .box4,
+        .box3 ~ .box5 {
+            border-color: #d29b4d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+
+        <div class="box1">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600"
+                 alt="Food">
+        </div>
+
+        <div class="box2">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600"
+                 alt="Food">
+        </div>
+
+        <div class="box3">
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800"
+                 alt="Restaurant">
+        </div>
+
+        <div class="box4">
+            <img src="https://images.unsplash.com/photo-1579684947550-22e945225d9a?w=600"
+                 alt="Food">
+        </div>
+
+        <div class="box5">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600"
+                 alt="Food">
+        </div>
+
+    </div>
+
+</body>
+</html>
