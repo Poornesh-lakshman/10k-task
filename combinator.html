@@ -3,138 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Gallery</title>
-
+    <title>Diamond Gallery Grid</title>
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            background-color: #eeeeee;
+            background-color: #f3e5d0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        .gallery {
-            width: 780px;
-            height: 650px;
-            background-color: #f2e2c7;
+        /* Container grid */
+        .gallery-container {
             position: relative;
-            overflow: hidden;
+            width: 500px;
+            height: 500px;
         }
 
-        /* Child combinator */
-        .gallery > div {
+        /* Combinator Selector 1: Child selector for all diamond boxes */
+        .gallery-container > .diamond-card {
             position: absolute;
-            width: 180px;
-            height: 180px;
-
+            width: 170px;
+            height: 170px;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 4px solid #d4a359;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            /* Rotate container into a diamond shape */
             transform: rotate(45deg);
-            overflow: hidden;
-
-            border: 5px solid #d29b4d;
         }
 
-        /* Descendant combinator */
-        .gallery div img {
-            width: 270px;
-            height: 270px;
+        /* Combinator Selector 2: Descendant selector for images within cards */
+        .gallery-container .diamond-card img {
+            width: 145%;
+            height: 145%;
             object-fit: cover;
-
+            /* Counter-rotate image back to upright position */
+            transform: rotate(-45deg) scale(1.2);
             position: absolute;
-            top: -48px;
-            left: -48px;
-
-            transform: rotate(-45deg);
+            top: -22.5%;
+            left: -22.5%;
         }
 
-        /* First image */
-        .box1 {
-            top: 85px;
-            left: 175px;
+        /* Positioning each diamond card relative to the center grid */
+        /* Center Diamond (Larger) */
+        .gallery-container > .diamond-card.center {
+            width: 210px;
+            height: 210px;
+            top: 145px;
+            left: 145px;
+            z-index: 2;
         }
 
-        /* Second image */
-        .box2 {
-            top: 85px;
-            right: 70px;
+        /* Top-Left */
+        .gallery-container > .diamond-card.top-left {
+            top: 40px;
+            left: 50px;
         }
 
-        /* Center image */
-        .box3 {
-            width: 230px !important;
-            height: 230px !important;
-
-            top: 215px;
-            left: 325px;
+        /* Top-Right */
+        .gallery-container > .diamond-card.top-right {
+            top: 40px;
+            right: 50px;
         }
 
-        .box3 img {
-            width: 340px;
-            height: 340px;
-            top: -55px;
-            left: -55px;
+        /* Bottom-Left */
+        .gallery-container > .diamond-card.bottom-left {
+            bottom: 40px;
+            left: 50px;
         }
 
-        /* Fourth image */
-        .box4 {
-            bottom: 80px;
-            left: 175px;
-        }
-
-        /* Fifth image */
-        .box5 {
-            bottom: 80px;
-            right: 70px;
-        }
-
-        /* Adjacent sibling combinator */
-        .box1 + .box2 {
-            transform: rotate(45deg) translate(5px, 0);
-        }
-
-        /* General sibling combinator */
-        .box3 ~ .box4,
-        .box3 ~ .box5 {
-            border-color: #d29b4d;
+        /* Bottom-Right */
+        .gallery-container > .diamond-card.bottom-right {
+            bottom: 40px;
+            right: 50px;
         }
     </style>
 </head>
-
 <body>
 
-    <div class="gallery">
-
-        <div class="box1">
-            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600"
-                 alt="Food">
+    <div class="gallery-container">
+        <!-- Center Diamond -->
+        <div class="diamond-card center">
+            <img src="https://picsum.photos/id/1060/500/500" alt="Flowers Centerpiece">
         </div>
 
-        <div class="box2">
-            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600"
-                 alt="Food">
+        <!-- Top Left -->
+        <div class="diamond-card top-left">
+            <img src="https://picsum.photos/id/292/400/400" alt="Salad Buffet">
         </div>
 
-        <div class="box3">
-            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800"
-                 alt="Restaurant">
+        <!-- Top Right -->
+        <div class="diamond-card top-right">
+            <img src="https://picsum.photos/id/429/400/400" alt="Bruschetta Platter">
         </div>
 
-        <div class="box4">
-            <img src="https://images.unsplash.com/photo-1579684947550-22e945225d9a?w=600"
-                 alt="Food">
+        <!-- Bottom Left -->
+        <div class="diamond-card bottom-left">
+            <img src="https://picsum.photos/id/1080/400/400" alt="Warm Buffet Trays">
         </div>
 
-        <div class="box5">
-            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600"
-                 alt="Food">
+        <!-- Bottom Right -->
+        <div class="diamond-card bottom-right">
+            <img src="https://picsum.photos/id/625/400/400" alt="Tapas Spread">
         </div>
-
     </div>
 
 </body>
